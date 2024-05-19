@@ -1,0 +1,22 @@
+{
+  "name": "@pnpm-monorepo/colord",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@ant-design/colors": "^7.0.2",
+    "colord": "^2.9.3"
+  },
+  "exports": {
+    ".": "./src/main.ts"
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./src/*"
+      ]
+    }
+  }
+}

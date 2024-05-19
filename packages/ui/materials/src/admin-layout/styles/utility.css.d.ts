@@ -1,0 +1,20 @@
+declare const styles: {
+  readonly absolute: string;
+  readonly 'bg-black-0.2': string;
+  readonly 'bg-white': string;
+  readonly 'bottom-0': string;
+  readonly flex: string;
+  readonly 'flex-col': string;
+  readonly 'flex-grow': string;
+  readonly 'flex-shrink-0': string;
+  readonly 'h-full': string;
+  readonly 'left-0': string;
+  readonly 'overflow-hidden': string;
+  readonly 'overflow-y-auto': string;
+  readonly relative: string;
+  readonly 'top-0!': string;
+  readonly 'top-0': string;
+  readonly 'transition-all-300': string;
+  readonly 'w-full': string;
+};
+export = styles;

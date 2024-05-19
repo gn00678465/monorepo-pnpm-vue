@@ -1,0 +1,6 @@
+@import url('./utility.css');
+
+.admin-layout-native {
+  position: relative;
+  height: 100%;
+}

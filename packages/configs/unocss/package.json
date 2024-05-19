@@ -1,0 +1,21 @@
+{
+  "name": "@pnpm-monorepo-vue/unocss",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./src/*"
+      ]
+    }
+  },
+  "devDependencies": {
+    "unocss": "0.59.0-beta.1"
+  }
+}
