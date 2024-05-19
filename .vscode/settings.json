@@ -1,0 +1,13 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "notebook.formatOnSave.enabled": true,
+  "prettier.configPath": ".prettierrc.yaml",
+  "emmet.includeLanguages": {
+    "vue": "html",
+    "vue-html": "html"
+  },
+  "emmet.triggerExpansionOnTab": true,
+  "cSpell.words": ["composables", "nuxt", "pinia"],
+  "vitest.workspaceConfig": "vitest.workspace.ts"
+}

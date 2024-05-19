@@ -1,0 +1,5 @@
+{
+  "pre-commit": "pnpm lint-staged",
+  "commit-msg": "pnpm exec commitlint --edit \"${1}\"",
+  "preserveUnused": true
+}
