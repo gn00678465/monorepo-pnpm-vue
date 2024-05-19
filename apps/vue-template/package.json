@@ -1,23 +1,40 @@
 {
-  "name": "vue-template",
+  "name": "@pnpm-monorepo-vue/vue-template",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "sizecheck": "pnpm exec vite-bundle-visualizer",
+    "typecheck": "vue-tsc --noEmit",
+    "up": "taze major -I"
   },
   "dependencies": {
     "@pnpm-monorepo-vue/unocss": "workspace:*",
-    "vue": "^3.4.21"
+    "@unhead/vue": "^1.9.4",
+    "@unocss/reset": "0.59.0-beta.1",
+    "pinia": "^2.1.7",
+    "pinia-orm": "^1.7.2",
+    "vue": "^3.4.21",
+    "vue-i18n": "^9.11.0",
+    "vue-router": "^4.3.0"
   },
   "devDependencies": {
+    "@intlify/unplugin-vue-i18n": "^4.0.0",
     "@vitejs/plugin-vue": "^5.0.4",
     "@vue/eslint-config-typescript": "^13.0.0",
     "typescript": "^5.2.2",
     "unocss": "0.59.0-beta.1",
+    "unplugin-vue-macros": "^2.9.0",
+    "unplugin-vue-router": "^0.8.5",
     "vite": "^5.2.0",
-    "vue-tsc": "^2.0.6"
+    "vue-tsc": "^2.0.6",
+    "vite-plugin-inspect": "^0.8.3",
+    "vite-plugin-pwa": "^0.19.7",
+    "vite-plugin-vue-devtools": "^7.0.25",
+    "vite-plugin-vue-layouts": "^0.11.0",
+    "vite-plugin-webfont-dl": "^3.9.2"
   }
 }
