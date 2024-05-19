@@ -1,5 +1,5 @@
 import type { AdminLayoutProps } from './props.type';
-import type { KebabCase } from '@zt-project/zt-utility';
+import type { KebabCase } from './KebabCase';
 
 export type CssVarsProps = Pick<
   AdminLayoutProps,
