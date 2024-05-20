@@ -9,20 +9,20 @@ import WebfontDownload from 'vite-plugin-webfont-dl';
 import Unocss from 'unocss/vite';
 import { VitePWA } from 'vite-plugin-pwa';
 import VueI18n from '@intlify/unplugin-vue-i18n/vite';
+import { fileURLToPath } from 'node:url';
 
 // https://vitejs.dev/config/
 export default defineConfig({
   resolve: {
     alias: {
-      '@/': `${resolve(__dirname, 'src')}/`
+      '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
 
   build: {
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'index.html'),
-        admin: resolve(__dirname, './admin/index.html')
+        main: resolve(__dirname, 'index.html')
       }
     }
   },
@@ -30,6 +30,12 @@ export default defineConfig({
   server: {
     host: '0.0.0.0',
     port: 4200
+  },
+
+  css: {
+    modules: {
+      localsConvention: 'camelCase'
+    }
   },
 
   plugins: [
@@ -52,7 +58,7 @@ export default defineConfig({
     Layouts({
       layoutsDirs: resolve(__dirname, 'src/layouts'),
       pagesDirs: resolve(__dirname, 'src/pages'),
-      defaultLayout: 'default'
+      defaultLayout: 'AdminLayout'
     }),
 
     // https://github.com/antfu/unocss

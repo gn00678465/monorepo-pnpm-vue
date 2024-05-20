@@ -12,7 +12,11 @@
     "up": "taze major -I"
   },
   "dependencies": {
+    "@iconify/json": "^2.2.211",
+    "@pnpm-monorepo-vue/materials": "workspace:*",
+    "@pnpm-monorepo-vue/naive-ui": "workspace:*",
     "@pnpm-monorepo-vue/unocss": "workspace:*",
+    "@pnpm-monorepo-vue/utility": "workspace:*",
     "@unhead/vue": "^1.9.4",
     "@unocss/reset": "0.59.0-beta.1",
     "pinia": "^2.1.7",
@@ -22,19 +26,21 @@
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
+    "@iconify/vue": "^4.1.2",
     "@intlify/unplugin-vue-i18n": "^4.0.0",
     "@vitejs/plugin-vue": "^5.0.4",
     "@vue/eslint-config-typescript": "^13.0.0",
+    "naive-ui": "^2.38.2",
     "typescript": "^5.2.2",
     "unocss": "0.59.0-beta.1",
     "unplugin-vue-macros": "^2.9.0",
     "unplugin-vue-router": "^0.8.5",
     "vite": "^5.2.0",
-    "vue-tsc": "^2.0.6",
     "vite-plugin-inspect": "^0.8.3",
     "vite-plugin-pwa": "^0.19.7",
     "vite-plugin-vue-devtools": "^7.0.25",
     "vite-plugin-vue-layouts": "^0.11.0",
-    "vite-plugin-webfont-dl": "^3.9.2"
+    "vite-plugin-webfont-dl": "^3.9.2",
+    "vue-tsc": "^2.0.6"
   }
 }

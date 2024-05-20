@@ -1,0 +1,24 @@
+{
+  "name": "@pnpm-monorepo-vue/naive-ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./src/*"
+      ]
+    }
+  },
+  "devDependencies": {
+    "naive-ui": "^2.38.2",
+    "vue": "^3.4.27"
+  }
+}

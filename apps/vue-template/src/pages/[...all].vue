@@ -1,17 +1,14 @@
 <template>
-  <div>
-    <n-button size="large" type="primary">Home</n-button>
-  </div>
+  <div>404</div>
 </template>
 
 <script setup lang="ts">
-import { NButton } from 'naive-ui';
 import { definePage } from 'vue-router/auto';
 
 definePage({
-  name: 'client_index',
+  name: 'not-found',
   meta: {
-    title: 'Client index',
+    title: 'Page Not Found',
     requiresAuth: false,
     hide: true
   }
@@ -22,5 +19,5 @@ definePage({
 
 <route lang="yaml">
 meta:
-  layout: ErrorLayout
+  layout: BlankLayout
 </route>

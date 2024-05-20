@@ -4,7 +4,6 @@
   "notebook.formatOnSave.enabled": true,
   "prettier.configPath": ".prettierrc.yaml",
   "emmet.includeLanguages": {
-    "vue": "html",
     "vue-html": "html"
   },
   "emmet.triggerExpansionOnTab": true,
