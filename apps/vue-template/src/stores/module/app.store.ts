@@ -15,7 +15,7 @@ export const useAppStore = defineStore('app-store', () => {
     });
   });
 
-  const sidebarWidth = ref(360);
+  const sidebarWidth = ref(240);
   const sidebarCollapsedWidth = ref(64);
   const sidebarCollapse = ref(false);
 
