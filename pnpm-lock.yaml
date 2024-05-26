@@ -77,6 +77,9 @@ importers:
       '@iconify/json':
         specifier: ^2.2.211
         version: 2.2.211
+      '@pnpm-monorepo-vue/colord':
+        specifier: workspace:*
+        version: link:../../packages/colord
       '@pnpm-monorepo-vue/materials':
         specifier: workspace:*
         version: link:../../packages/ui/materials
@@ -98,6 +101,9 @@ importers:
       '@vueuse/core':
         specifier: ^10.9.0
         version: 10.9.0(vue@3.4.27(typescript@5.4.5))
+      lodash-es:
+        specifier: ^4.17.21
+        version: 4.17.21
       pinia:
         specifier: ^2.1.7
         version: 2.1.7(typescript@5.4.5)(vue@3.4.27(typescript@5.4.5))

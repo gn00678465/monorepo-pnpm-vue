@@ -1,4 +1,4 @@
-import { ref, computed, watch } from 'vue';
+import { ref, computed, watch, reactive } from 'vue';
 import { defineStore } from 'pinia';
 import { darkTheme } from 'naive-ui';
 import {
@@ -8,10 +8,16 @@ import {
 } from '@vueuse/core';
 import { getGenerateColors, getThemeOverrides } from './helpers';
 import type { ThemeConfig, ColorType } from '../../../types';
+import type { AdminLayoutProps } from '@pnpm-monorepo-vue/materials';
 
 export const useThemeStore = defineStore('theme-store', () => {
   const defaultMode = ref<BasicColorSchema>('auto');
   const modeList = ref<BasicColorSchema[]>(['dark', 'light', 'auto']);
+
+  const layoutMode = ref<AdminLayoutProps['mode']>('vertical');
+  const header = reactive({
+    height: 50
+  });
 
   const colorMode = useColorMode({
     initialValue: defaultMode.value,
@@ -74,5 +80,14 @@ export const useThemeStore = defineStore('theme-store', () => {
     next();
   }
 
-  return { theme, themeOverrides, darkMode, toggleDarkMode, themeColors };
+  return {
+    theme,
+    themeOverrides,
+    darkMode,
+    toggleDarkMode,
+    themeColors,
+    // layout
+    layoutMode,
+    header
+  };
 });

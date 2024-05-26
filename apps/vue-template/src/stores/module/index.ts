@@ -1,2 +1,2 @@
-export * from './app.store';
+export * from './app';
 export * from './theme/theme.store';

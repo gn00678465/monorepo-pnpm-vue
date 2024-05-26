@@ -1,9 +1,9 @@
 <template>
-  <div>Admin</div>
+  <RouterView></RouterView>
 </template>
 
 <script setup lang="ts">
-import { definePage } from 'vue-router/auto';
+import { definePage, RouterView } from 'vue-router/auto';
 
 definePage({
   name: 'admin_layer_1',

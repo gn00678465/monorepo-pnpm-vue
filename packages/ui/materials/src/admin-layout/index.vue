@@ -5,6 +5,11 @@ import { createAdminLayoutCssVars } from './helper';
 import { LAYOUT_MAX_Z_INDEX } from './constants';
 import type { AdminLayoutProps, AdminLayoutSlots } from './types';
 
+defineOptions({
+  name: 'AdminLayoutFrame',
+  inheritAttrs: false
+});
+
 const props = withDefaults(defineProps<AdminLayoutProps>(), {
   mode: 'vertical',
   scrollMode: 'content',

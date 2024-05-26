@@ -1,5 +1,5 @@
-import type { AdminLayoutProps } from './types';
+import type { AdminLayoutProps, SidebarScopeSlotProps } from './types';
 
 export { default as AdminLayout } from './index.vue';
 
-export type { AdminLayoutProps };
+export type { AdminLayoutProps, SidebarScopeSlotProps };

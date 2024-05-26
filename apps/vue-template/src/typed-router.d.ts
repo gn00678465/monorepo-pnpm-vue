@@ -26,5 +26,6 @@ declare module 'vue-router/auto-routes' {
     'admin_layer_1-2': RouteRecordInfo<'admin_layer_1-2', '/admin/layer-1/layer-1-2', Record<never, never>, Record<never, never>>,
     'admin_layer_1_2-1': RouteRecordInfo<'admin_layer_1_2-1', '/admin/layer-1/layer-1-2', Record<never, never>, Record<never, never>>,
     'admin_layer_1_2-2': RouteRecordInfo<'admin_layer_1_2-2', '/admin/layer-1/layer-1-2/layer-1-2-2', Record<never, never>, Record<never, never>>,
+    'admin_theme_config': RouteRecordInfo<'admin_theme_config', '/admin/theme', Record<never, never>, Record<never, never>>,
   }
 }
