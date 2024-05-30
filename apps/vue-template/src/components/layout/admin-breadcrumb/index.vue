@@ -6,7 +6,7 @@
         <component
           :is="breadcrumb.icon"
           v-if="header.breadcrumb.showIcon"
-          class="mr-4px"
+          class="mr-1 text-lg"
         ></component>
         {{ breadcrumb.label }}
       </div>
