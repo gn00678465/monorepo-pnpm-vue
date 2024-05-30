@@ -4,10 +4,47 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + Vue + TS</title>
+    <title>Vue template</title>
   </head>
   <body>
     <div id="app"></div>
+    <div class="loading-wrapper select-none" id="loading" v-cloak>
+      <noscript>
+        <h3 class="noscript">Javascript Error</h3>
+      </noscript>
+    </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
+
+  <style>
+    .loading-wrapper {
+      height: 100%;
+      width: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      background: #eff2f5;
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 100000;
+      -webkit-transition:
+        opacity 0.5s,
+        transform 1.5s ease;
+      transition:
+        opacity 0.5s,
+        transform 1.5s ease;
+      user-select: none;
+    }
+  </style>
 </html>

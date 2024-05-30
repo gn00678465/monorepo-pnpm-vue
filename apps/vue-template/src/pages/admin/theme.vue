@@ -50,7 +50,7 @@ definePage({
   meta: {
     requiresAuth: true,
     title: 'Theme Config',
-    icon: 'clarity:dashboard-outline-badged',
+    icon: 'mdi:theme-outline',
     sort: 3
   }
 });
