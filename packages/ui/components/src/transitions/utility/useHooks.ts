@@ -9,9 +9,7 @@ import type { ComponentProps, TransitionKey, CamelCaseKey } from '../types';
 
 export function useHooks(
   props: ComponentProps,
-  emits: Partial<
-    Record<TransitionKey | CamelCaseKey, (el: RendererElement) => void>
-  > = {}
+  emits: ((...args: any[]) => any) | ((evt: string, ...args: any[]) => void)
 ) {
   function beforeEnter(props: ComponentProps, el: RendererElement) {
     const enterDuration = getTimingValue(props.duration, 'enter');
@@ -45,32 +43,32 @@ export function useHooks(
   return {
     onBeforeEnter: (el: RendererElement) => {
       beforeEnter(props, el);
-      emits['beforeEnter']?.(el);
+      emits('before-enter', el);
     },
     onEnter: (el: RendererElement, done: () => void) => {
-      emits.enter?.(el);
+      emits('enter', el);
     },
     onAfterEnter: (el: RendererElement) => {
       cleanUpStyles(props, el);
-      emits['afterEnter']?.(el);
+      emits('after-enter', el);
     },
     onEnterCanceled: (el: RendererElement) => {
-      emits['enterCancelled']?.(el);
+      emits('enter-cancelled', el);
     },
     onBeforeLeave: (el: RendererElement) => {
       beforeLeave(props, el);
-      emits['beforeLeave']?.(el);
+      emits('before-leave', el);
     },
     onLeave: (el: RendererElement, done: () => void) => {
       leave(props, el, done);
-      emits.leave?.(el);
+      emits('leave', el);
     },
     onAfterLeave: (el: RendererElement) => {
       cleanUpStyles(props, el);
-      emits['afterLeave']?.(el);
+      emits('after-leave', el);
     },
     onLeaveCanceled: (el: RendererElement) => {
-      emits['leaveCancelled']?.(el);
+      emits('leave-cancelled', el);
     }
   };
 }

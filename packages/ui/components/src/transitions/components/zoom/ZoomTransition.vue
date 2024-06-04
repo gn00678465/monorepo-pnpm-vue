@@ -1,7 +1,7 @@
 <template>
   <component
     :is="transitionType(group)"
-    name="fade"
+    name="zoom"
     :style="styles"
     v-bind="{ ...hooks, ...attrs, ...props }"
   >
@@ -46,31 +46,39 @@ const hooks = useHooks(props, emits);
 </script>
 
 <style scoped>
-@keyframes fade-in {
+@keyframes zoom-in {
   from {
     opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
   }
-  to {
+
+  50% {
     opacity: 1;
   }
 }
 
-@keyframes fade-out {
+@keyframes zoom-out {
   from {
     opacity: 1;
   }
+
+  50% {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
   to {
     opacity: 0;
   }
 }
 
-.fade-enter-active {
-  animation-name: fade-in;
+.zoom-enter-active {
+  animation-name: zoom-in;
 }
-.fade-leave-active {
-  animation-name: fade-out;
+.zoom-leave-active {
+  animation-name: zoom-out;
 }
-.fade-move {
+.zoom-move {
   transition: transform 0.35s ease-out;
 }
 </style>

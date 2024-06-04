@@ -11,13 +11,15 @@ import { setupRouter, router } from './router';
 import { register } from '@pnpm-monorepo-vue/web-components';
 // import { enableMocking } from './mocks/index';
 import type { UserModule } from './types';
-import { setupLoading, removeLoading } from './utility';
+import { Loading } from './utility';
 
 async function setupApp() {
   // register web components
   register(['cube-loading']);
 
-  const loading = setupLoading();
+  /** show initial loading */
+  const loading = new Loading({ title: '載入中，請稍後...', once: true });
+  loading.start();
 
   // mock data by msw
   // await enableMocking();
@@ -36,7 +38,8 @@ async function setupApp() {
 
   await setupRouter(app);
 
-  removeLoading(loading);
+  /** hide initial loading */
+  loading.stop();
 
   const meta = document.createElement('meta');
   meta.name = 'naive-ui-style';

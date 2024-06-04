@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div class="p-20">
+    <h1 class="text-primary text-12">Index</h1>
     <n-button size="large" type="primary">Home</n-button>
   </div>
 </template>
