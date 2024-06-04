@@ -80,6 +80,9 @@ importers:
       '@pnpm-monorepo-vue/colord':
         specifier: workspace:*
         version: link:../../packages/colord
+      '@pnpm-monorepo-vue/components':
+        specifier: workspace:*
+        version: link:../../packages/ui/components
       '@pnpm-monorepo-vue/materials':
         specifier: workspace:*
         version: link:../../packages/ui/materials

@@ -20,6 +20,7 @@
     "@pnpm-monorepo-vue/unocss": "workspace:*",
     "@pnpm-monorepo-vue/utility": "workspace:*",
     "@pnpm-monorepo-vue/web-components": "workspace:*",
+    "@pnpm-monorepo-vue/components": "workspace:*",
     "@unhead/vue": "^1.9.4",
     "@unocss/reset": "0.59.0-beta.1",
     "@vueuse/core": "^10.9.0",

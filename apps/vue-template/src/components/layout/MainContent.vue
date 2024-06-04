@@ -1,17 +1,17 @@
 <template>
   <div class="main">
     <router-view v-slot="{ Component, route }">
-      <keep-alive v-if="keepAlive" :max="30" :include="cache">
-        <component :key="route.path" :is="Component" />
-      </keep-alive>
-      <component v-else :is="Component" />
+      <FadeTransition>
+        <keep-alive :max="30" :include="cache">
+          <component :key="route.path" :is="Component" />
+        </keep-alive>
+      </FadeTransition>
     </router-view>
   </div>
 </template>
 
 <script lang="ts">
 export type MainContentProps = {
-  keepAlive: boolean;
   cache: string[];
 };
 </script>
@@ -19,12 +19,12 @@ export type MainContentProps = {
 <script setup lang="ts">
 import { toRefs } from 'vue';
 import { RouterView } from 'vue-router/auto';
+import { FadeTransition } from '@pnpm-monorepo-vue/components';
 
 const props = withDefaults(defineProps<Partial<MainContentProps>>(), {
-  keepAlive: false,
   cache: () => []
 });
-const { keepAlive, cache } = toRefs(props);
+const { cache } = toRefs(props);
 </script>
 
 <style scoped>
