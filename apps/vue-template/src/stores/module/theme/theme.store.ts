@@ -1,19 +1,27 @@
-import { ref, computed, watch, reactive } from 'vue';
-import { defineStore } from 'pinia';
-import { darkTheme } from 'naive-ui';
 import {
-  useColorMode,
-  useCycleList,
-  type BasicColorSchema
-} from '@vueuse/core';
-import { getGenerateColors, getThemeOverrides } from './helpers';
-import type { ThemeConfig, ColorType } from '../../../types';
+  ref,
+  computed,
+  reactive,
+  effectScope,
+  onScopeDispose,
+  watch
+} from 'vue';
+import { defineStore } from 'pinia';
+import { darkTheme, commonDark, type GlobalThemeOverrides } from 'naive-ui';
 import type { AdminLayoutProps } from '@pnpm-monorepo-vue/materials';
+import { getGenerateColors, addCssVarsToRoot } from '@pnpm-monorepo-vue/colord';
+import { getNThemeOverrides } from './helpers';
+import type { ThemeConfig, ColorType } from '../../../types';
+import { useDarkMode } from './useDarkMode';
+import {
+  colorCombinationKeys,
+  generateColorCombination,
+  getRgbToString,
+  camelCaseKey
+} from '../../../utility';
 
 export const useThemeStore = defineStore('theme-store', () => {
-  const defaultMode = ref<BasicColorSchema>('auto');
-  const modeList = ref<BasicColorSchema[]>(['dark', 'light', 'auto']);
-
+  const scope = effectScope();
   const layoutMode = ref<AdminLayoutProps['mode']>('vertical');
   const header = reactive({
     height: 50,
@@ -23,34 +31,8 @@ export const useThemeStore = defineStore('theme-store', () => {
     }
   });
 
-  const colorMode = useColorMode({
-    initialValue: defaultMode.value,
-    emitAuto: true
-  });
-
-  const { state, next } = useCycleList(modeList, {
-    initialValue: colorMode
-  });
-
-  watch(
-    state,
-    () => {
-      if (!modeList.value.includes(state.value)) {
-        state.value = defaultMode.value;
-      }
-      colorMode.value = state.value as BasicColorSchema;
-    },
-    { immediate: true }
-  );
-
   /** dark mode */
-  const darkMode = computed(() => {
-    const { system, store } = colorMode;
-    if (state.value === 'auto') {
-      return system.value === 'dark';
-    }
-    return store.value === 'dark';
-  });
+  const { darkMode, toggleDarkMode } = useDarkMode();
 
   /** theme config */
   const themeConfig = ref<ThemeConfig>({
@@ -69,26 +51,52 @@ export const useThemeStore = defineStore('theme-store', () => {
     const entries = Object.entries(themeConfig.value) as [ColorType, string][];
     const colors = {} as Record<ColorType, string[]>;
     entries.forEach(([key, value]) => {
-      colors[key] = getGenerateColors(value, darkMode.value);
+      colors[key] = getGenerateColors(value, {
+        darkMode: darkMode.value,
+        backgroundColor: commonDark.bodyColor
+      });
     });
     return colors;
   });
 
   /** theme-overrides */
   const themeOverrides = computed(() => {
-    return getThemeOverrides(themeConfig.value, darkMode.value);
+    return getNThemeOverrides(themeConfig.value, {
+      darkMode: darkMode.value,
+      backgroundColor: commonDark.bodyColor
+    });
   });
 
-  /** toggle dark mode */
-  function toggleDarkMode() {
-    next();
-  }
+  scope.run(() => {
+    watch(
+      themeOverrides,
+      (newTheme) => {
+        const { common } = newTheme;
+        if (!common) return;
+        const colors = generateColorCombination<
+          NonNullable<GlobalThemeOverrides['common']>
+        >(colorCombinationKeys, common, {
+          keyHandler: camelCaseKey,
+          valueHandler: getRgbToString,
+          prefix: '--'
+        });
+        addCssVarsToRoot(colors);
+      },
+      { immediate: true }
+    );
+  });
+
+  onScopeDispose(() => {
+    scope.stop();
+  });
 
   return {
-    theme,
-    themeOverrides,
+    // dark mode
     darkMode,
     toggleDarkMode,
+    // theme
+    theme,
+    themeOverrides,
     themeColors,
     // layout
     layoutMode,

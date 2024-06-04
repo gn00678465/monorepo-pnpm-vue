@@ -20,3 +20,17 @@ export function parseCssVar(cssText: string): CssVarObject {
   });
   return cssObj;
 }
+
+/**
+ * 將 css 變數設定到 :root
+ * @param themeConfig
+ * @return {void}
+ */
+export function addCssVarsToRoot<T extends Record<string, string>>(
+  themeConfig: T
+): void {
+  const $root = document.querySelector(':root') as HTMLElement;
+  Object.entries(themeConfig).forEach(([k, v]) => {
+    $root.style.setProperty(k, v);
+  });
+}
