@@ -6,7 +6,7 @@
     :sidebar-collapsed-width="sidebarCollapsedWidth"
     :sidebar-collapse="sidebarCollapse"
     sidebar-class="border-r bg-white shadow-md"
-    header-class="border-b bg-white"
+    common-class="bg-gray-100 transition-all-300"
   >
     <template #header>
       <AdminHeader></AdminHeader>

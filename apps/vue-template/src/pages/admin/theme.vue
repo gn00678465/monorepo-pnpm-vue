@@ -1,5 +1,5 @@
 <template>
-  <div class="p-10">
+  <div class="p-4 shadow rounded bg-white">
     <h3 class="mb-5 text-5xl">Color Palette</h3>
     <ul class="flex flex-col gap-y-5">
       <li v-for="(value, key) of themeColors" :key="key">
@@ -39,10 +39,9 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue';
+import { computed, capitalize } from 'vue';
 import { definePage } from 'vue-router/auto';
 import { storeToRefs } from 'pinia';
-import { capitalize } from 'vue';
 import { useThemeStore } from '../../stores';
 
 definePage({

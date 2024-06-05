@@ -1,5 +1,5 @@
 <template>
-  <div class="h-full">
+  <div class="h-full shadow rounded overflow-hidden">
     <iframe
       id="iframePage"
       class="size-full"

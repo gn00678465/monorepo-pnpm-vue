@@ -1,7 +1,7 @@
 <template>
-  <div class="main">
+  <div class="main px-3 pb-2 pt-0">
     <router-view v-slot="{ Component, route }">
-      <FadeTransition>
+      <FadeTransition appear>
         <keep-alive :max="30" :include="cache">
           <component :key="route.path" :is="Component" />
         </keep-alive>

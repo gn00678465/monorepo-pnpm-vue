@@ -1,7 +1,14 @@
 <template>
-  <div class="size-full px-4 flex items-center justify-start flex-grow gap-x-4">
-    <MenuCollapse v-model:collapsed="sidebarCollapse" :size="20"></MenuCollapse>
-    <AdminBreadcrumb></AdminBreadcrumb>
+  <div class="py-2 px-3">
+    <div
+      class="size-full px-4 flex items-center justify-start flex-grow gap-x-4 bg-white py-3 rounded shadow"
+    >
+      <MenuCollapse
+        v-model:collapsed="sidebarCollapse"
+        :size="20"
+      ></MenuCollapse>
+      <AdminBreadcrumb></AdminBreadcrumb>
+    </div>
   </div>
 </template>
 

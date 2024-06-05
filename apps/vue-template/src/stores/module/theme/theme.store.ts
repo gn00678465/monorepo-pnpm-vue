@@ -24,7 +24,7 @@ export const useThemeStore = defineStore('theme-store', () => {
   const scope = effectScope();
   const layoutMode = ref<AdminLayoutProps['mode']>('vertical');
   const header = reactive({
-    height: 50,
+    height: 68,
     breadcrumb: {
       visible: true,
       showIcon: true
