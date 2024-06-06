@@ -1,8 +1,8 @@
-import { resolve } from 'node:path';
-import { i18nToolkit } from './index';
+import { resolve, dirname } from 'node:path';
+import { fileURLToPath } from 'url';
+import { push } from '@pnpm-monorepo-vue/scripts';
 
-const folderPath = resolve(__dirname, '../locales');
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const folderPath = resolve(__dirname, '../../src/locales');
 
-i18nToolkit.push({ folderPath, sheetName: 'template' }).then(() => {
-  console.log('push done!');
-});
+push(folderPath);
