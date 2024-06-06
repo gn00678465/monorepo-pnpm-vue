@@ -1,0 +1,25 @@
+{
+  "name": "@pnpm-monorepo-vue/locale-kit",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "google-sheet-languages-model": "^0.1.5",
+    "googleapis": "^139.0.0"
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./src/*"
+      ]
+    }
+  }
+}

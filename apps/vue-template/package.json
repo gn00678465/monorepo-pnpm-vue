@@ -9,7 +9,9 @@
     "preview": "vite preview",
     "sizecheck": "pnpm exec vite-bundle-visualizer",
     "typecheck": "vue-tsc --noEmit",
-    "up": "taze major -I"
+    "up": "taze major -I",
+    "locale:pull": "tsx ./scripts/pull.ts",
+    "locale:push": "tsx ./scripts/push.ts"
   },
   "dependencies": {
     "@ant-design/colors": "^7.0.2",
@@ -48,6 +50,7 @@
     "vite-plugin-vue-devtools": "^7.0.25",
     "vite-plugin-vue-layouts": "^0.11.0",
     "vite-plugin-webfont-dl": "^3.9.2",
-    "vue-tsc": "^2.0.6"
+    "vue-tsc": "^2.0.6",
+    "@pnpm-monorepo-vue/locale-kit": "workspace:*"
   }
 }
