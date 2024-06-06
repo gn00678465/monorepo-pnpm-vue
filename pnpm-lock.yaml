@@ -144,6 +144,9 @@ importers:
       '@vue/eslint-config-typescript':
         specifier: ^13.0.0
         version: 13.0.0(eslint-plugin-vue@9.26.0(eslint@9.3.0))(eslint@9.3.0)(typescript@5.4.5)
+      dotenv:
+        specifier: ^16.4.5
+        version: 16.4.5
       naive-ui:
         specifier: ^2.38.2
         version: 2.38.2(vue@3.4.27(typescript@5.4.5))
@@ -241,9 +244,6 @@ importers:
 
   packages/scripts:
     devDependencies:
-      dotenv:
-        specifier: ^16.4.5
-        version: 16.4.5
       google-sheet-languages-model:
         specifier: ^0.1.5
         version: 0.1.5

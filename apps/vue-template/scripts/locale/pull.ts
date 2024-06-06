@@ -1,8 +1,5 @@
-import { resolve, dirname } from 'node:path';
-import { fileURLToPath } from 'url';
-import { pull } from '@pnpm-monorepo-vue/scripts';
+import { folderPath, localKit } from './index';
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const folderPath = resolve(__dirname, '../../src/locales');
-
-pull(folderPath);
+localKit.pull({ folderPath, sheetName: 'template', type: 'nest' }).then(() => {
+  console.log('pull done!');
+});
