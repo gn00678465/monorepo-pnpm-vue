@@ -8,5 +8,10 @@
   },
   "emmet.triggerExpansionOnTab": true,
   "cSpell.words": ["colord", "composables", "nuxt", "pinia", "vueuse"],
-  "vitest.workspaceConfig": "vitest.workspace.ts"
+  "vitest.workspaceConfig": "vitest.workspace.ts",
+  "i18n-ally.sourceLanguage": "zhTW",
+  "i18n-ally.displayLanguage": "zhTW",
+  "i18n-ally.keystyle": "nested",
+  "i18n-ally.sortKeys": true,
+  "i18n-ally.localesPaths": ["../apps/vue-template/src/locales"]
 }

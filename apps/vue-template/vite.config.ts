@@ -99,7 +99,7 @@ export default defineConfig({
       runtimeOnly: true,
       compositionOnly: true,
       fullInstall: true,
-      include: [resolve(__dirname, 'locales/**')]
+      include: [resolve(__dirname, 'src/locales/**')]
     }),
 
     // https://github.com/feat-agency/vite-plugin-webfont-dl

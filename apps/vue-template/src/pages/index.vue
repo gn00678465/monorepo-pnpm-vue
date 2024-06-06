@@ -1,13 +1,14 @@
 <template>
   <div class="p-20">
     <h1 class="text-primary text-12">Index</h1>
-    <n-button size="large" type="primary">Home</n-button>
+    <n-button size="large" type="primary">{{ t('ok') }}</n-button>
   </div>
 </template>
 
 <script setup lang="ts">
 import { NButton } from 'naive-ui';
 import { definePage } from 'vue-router/auto';
+import { useI18n } from 'vue-i18n';
 
 definePage({
   name: 'client_index',
@@ -17,6 +18,8 @@ definePage({
     hide: true
   }
 });
+
+const { t } = useI18n();
 </script>
 
 <style scoped></style>
