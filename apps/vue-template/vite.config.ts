@@ -9,10 +9,12 @@ import WebfontDownload from 'vite-plugin-webfont-dl';
 import Unocss from 'unocss/vite';
 import { VitePWA } from 'vite-plugin-pwa';
 import VueI18n from '@intlify/unplugin-vue-i18n/vite';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath } from 'url';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  root: process.cwd(),
+
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
@@ -20,6 +22,7 @@ export default defineConfig({
   },
 
   build: {
+    emptyOutDir: true,
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html')

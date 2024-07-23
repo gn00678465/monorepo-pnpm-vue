@@ -9,9 +9,11 @@ import 'trickling/lib/style.css';
 import App from './app/App.vue';
 import { setupRouter, router } from './router';
 import { register } from '@pnpm-monorepo-vue/web-components';
+import { Icon } from '@iconify/vue';
 // import { enableMocking } from './mocks/index';
 import type { UserModule } from './types';
-import { Loading } from './utility';
+import { Loading, loadInitialConfig } from './utility';
+import { useThemeStore } from './stores';
 
 async function setupApp() {
   // register web components
@@ -38,12 +40,19 @@ async function setupApp() {
 
   await setupRouter(app);
 
+  const themeStore = useThemeStore();
+
+  await loadInitialConfig(themeStore.initializeConfig);
+
   /** hide initial loading */
   loading.stop();
 
   const meta = document.createElement('meta');
   meta.name = 'naive-ui-style';
   document.head.appendChild(meta);
+
+  // register component
+  app.component('Icon', Icon);
 
   app.mount('#app');
 }

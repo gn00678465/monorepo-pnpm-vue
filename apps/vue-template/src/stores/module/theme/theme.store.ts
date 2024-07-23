@@ -11,7 +11,7 @@ import { darkTheme, commonDark, type GlobalThemeOverrides } from 'naive-ui';
 import type { AdminLayoutProps } from '@pnpm-monorepo-vue/materials';
 import { getGenerateColors, addCssVarsToRoot } from '@pnpm-monorepo-vue/colord';
 import { getNThemeOverrides } from './helpers';
-import type { ThemeConfig, ColorType } from '../../../types';
+import type { ThemeConfig, ColorType, AppConfig } from '../../../types';
 import { useDarkMode } from './useDarkMode';
 import {
   colorCombinationKeys,
@@ -67,6 +67,10 @@ export const useThemeStore = defineStore('theme-store', () => {
     });
   });
 
+  function initializeConfig(config: AppConfig) {
+    themeConfig.value = config.colors || themeConfig.value;
+  }
+
   scope.run(() => {
     watch(
       themeOverrides,
@@ -100,6 +104,8 @@ export const useThemeStore = defineStore('theme-store', () => {
     themeColors,
     // layout
     layoutMode,
-    header
+    header,
+    // config
+    initializeConfig
   };
 });

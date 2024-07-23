@@ -1,0 +1,9 @@
+{
+  "colors": {
+    "primary": "#18A058FF",
+    "info": "#2080F0FF",
+    "success": "#18A058FF",
+    "warning": "#F0A020FF",
+    "error": "#D03050FF"
+  }
+}

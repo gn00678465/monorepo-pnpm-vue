@@ -1,0 +1,22 @@
+services:
+  traefik:
+    image: 'traefik:v2.7'
+    command:
+      - '--providers.docker=true'
+      - '--providers.docker.exposedbydefault=false'
+      - '--entrypoints.web.address=:80'
+    ports:
+      - '81:80'
+    volumes:
+      - '/var/run/docker.sock:/var/run/docker.sock:ro'
+
+  vue-template:
+    container_name: vue-template
+    command: --spa
+    build:
+      context: ..
+      dockerfile: ./docker/vue-template.Dockerfile
+    labels:
+      - 'traefik.enable=true'
+      - 'traefik.http.routers.vue-template.rule=Host(`vue-template.localhost`)'
+      - 'traefik.http.services.vue-template.loadbalancer.server.port=8080' # port inside of trfk-vue which should be used
