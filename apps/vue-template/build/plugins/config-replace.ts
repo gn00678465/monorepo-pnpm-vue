@@ -1,4 +1,3 @@
-// https://github.com/elwin013/vite-plugin-replace-files/tree/master
 import type { PluginOption } from 'vite';
 import fs from 'fs';
 import path from 'path';

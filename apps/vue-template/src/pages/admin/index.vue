@@ -11,7 +11,7 @@ definePage({
   meta: {
     requiresAuth: true,
     title: 'Admin index',
-    icon: 'clarity:dashboard-outline-badged',
+    icon: '##icon-home##',
     sort: 1
   }
 });

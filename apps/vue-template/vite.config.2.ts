@@ -2,7 +2,7 @@ import { mergeConfig } from 'vite';
 import baseConfig from './vite.config';
 import configReplace from './build/plugins/config-replace';
 import { join } from 'path';
-import { merge } from 'lodash-es';
+import iconReplacerPlugin from './build/plugins/icon-replacer';
 
 // https://vitejs.dev/config/
 export default mergeConfig(baseConfig, {
@@ -12,6 +12,7 @@ export default mergeConfig(baseConfig, {
         target: join('dist', 'config.json'),
         replacement: join('build', 'config2.json')
       }
-    ])
+    ]),
+    iconReplacerPlugin({ path: join('build', 'icons.json') })
   ]
 });
