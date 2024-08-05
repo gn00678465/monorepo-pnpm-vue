@@ -10,7 +10,7 @@
 import { NButton } from 'naive-ui';
 import { definePage } from 'vue-router/auto';
 import { useI18n } from 'vue-i18n';
-import Logo from 'virtual:svg-to-sfc';
+import Logo from 'virtual:logo';
 
 definePage({
   name: 'client_index',

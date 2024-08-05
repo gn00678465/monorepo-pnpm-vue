@@ -4,13 +4,14 @@ import { basename } from 'path';
 import { readFileSync } from 'fs';
 
 export interface Options {
+  name: string;
   path: string;
 }
 
 export default function (options: Options): Plugin {
-  const { path } = options;
+  const { path, name } = options;
 
-  const virtualModuleId = 'virtual:svg-to-sfc';
+  const virtualModuleId = `virtual:${name}`;
   const resolvedVirtualModuleId = '\0' + virtualModuleId;
 
   async function compileSvg(source: string, path: string) {

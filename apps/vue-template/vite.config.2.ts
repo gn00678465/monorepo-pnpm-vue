@@ -15,6 +15,6 @@ export default mergeConfig(baseConfig, {
       }
     ]),
     iconReplacerPlugin({ path: join('build', 'icons.json') }),
-    svgToSFC({ path: join(process.cwd(), 'build', 'logo.svg') })
+    svgToSFC({ name: 'logo', path: join(process.cwd(), 'build', 'logo.svg') })
   ]
 });
