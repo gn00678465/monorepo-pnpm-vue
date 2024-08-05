@@ -3,6 +3,7 @@ import baseConfig from './vite.config';
 import configReplace from './build/plugins/config-replace';
 import { join } from 'path';
 import iconReplacerPlugin from './build/plugins/icon-replacer';
+import svgToSFC from './build/plugins/svg2sfc';
 
 // https://vitejs.dev/config/
 export default mergeConfig(baseConfig, {
@@ -13,6 +14,7 @@ export default mergeConfig(baseConfig, {
         replacement: join('build', 'config2.json')
       }
     ]),
-    iconReplacerPlugin({ path: join('build', 'icons.json') })
+    iconReplacerPlugin({ path: join('build', 'icons.json') }),
+    svgToSFC({ path: join(process.cwd(), 'build', 'logo.svg') })
   ]
 });
