@@ -1,16 +1,15 @@
 <template>
-  <div class="p-20">
-    <h1 class="text-primary text-12">Index</h1>
-    <Logo />
-    <n-button size="large" type="primary">{{ t('ok') }}</n-button>
-  </div>
+  <NSplit class="p-20">
+    <template #1>
+      <Tree></Tree>
+    </template>
+  </NSplit>
 </template>
 
 <script setup lang="ts">
-import { NButton } from 'naive-ui';
 import { definePage } from 'vue-router/auto';
-import { useI18n } from 'vue-i18n';
-import Logo from 'virtual:logo';
+import { NSplit } from 'naive-ui';
+import Tree from '../components/tree/Tree.vue';
 
 definePage({
   name: 'client_index',
@@ -21,10 +20,6 @@ definePage({
     icon: ''
   }
 });
-
-console.log('🚀 ~ logo:', Logo, typeof Logo);
-
-const { t } = useI18n();
 </script>
 
 <style scoped></style>

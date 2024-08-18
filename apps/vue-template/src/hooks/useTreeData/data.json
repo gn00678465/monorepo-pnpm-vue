@@ -1,0 +1,42 @@
+[
+  {
+    "_id": "66b9c9c932c6724cfa0388fa",
+    "pid": "000000000000000000000000",
+    "title": "root",
+    "distinguishedName": "root",
+    "unitId": 0,
+    "depth": 0,
+    "createdAt": 1723451849,
+    "updatedAt": 0
+  },
+  {
+    "_id": "66b9cc494ce9ac817f573d65",
+    "pid": "66b9c9c932c6724cfa0388fa",
+    "title": "rd1",
+    "distinguishedName": "root/rd1",
+    "unitId": 0,
+    "depth": 0,
+    "createdAt": 1723452489,
+    "updatedAt": 1723452489
+  },
+  {
+    "_id": "66b9cab5af3ff9e23be09d6f",
+    "pid": "66b9c9c932c6724cfa0388fa",
+    "title": "rd2",
+    "distinguishedName": "root/rd2",
+    "unitId": 0,
+    "depth": 0,
+    "createdAt": 1723452085,
+    "updatedAt": 1723452417
+  },
+  {
+    "_id": "66b9cc944ce9ac817f573d66",
+    "pid": "66b9cab5af3ff9e23be09d6f",
+    "title": "zta",
+    "distinguishedName": "root/rd2/zta",
+    "unitId": 0,
+    "depth": 0,
+    "createdAt": 1723452564,
+    "updatedAt": 1723452564
+  }
+]
